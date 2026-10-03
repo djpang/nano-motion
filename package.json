@@ -1,0 +1,8 @@
+{
+  "name": "nano-motion-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Nano Motion storefront and OpenAI Pixel demo",
+  "scripts": {"test": "node tests/verify.cjs"},
+  "devDependencies": {"playwright": "1.63.0"}
+}

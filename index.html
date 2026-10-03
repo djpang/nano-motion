@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./pixel.js"></script>
+  <title>Nano Motion — Made to move</title>
+  <meta name="description" content="Performance essentials for running, training and everyday movement. Explore the Nano Motion sample storefront.">
+  <meta name="theme-color" content="#20231e">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="announcement"><span>FICTIONAL STOREFRONT · DEMO ORDERS ONLY</span><span class="announcement-right">Built for motion. Made for everyday.</span></div>
+  <header class="header">
+    <a href="#/" class="wordmark" aria-label="Nano Motion home"><span class="brand-mark" aria-hidden="true">n<span>m</span></span>NANO MOTION</a>
+    <nav aria-label="Main navigation"><a href="#/shop" data-nav="shop">Shop</a><a href="#/membership" data-nav="membership">Motion Club</a></nav>
+    <div class="header-actions"><span class="currency-label">USD</span><a href="#/bag" class="bag-link" aria-label="Shopping bag"><svg width="20" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5"/></svg><span id="bag-count">0</span></a></div>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="footer">
+    <div><a class="wordmark footer-brand" href="#/">NANO MOTION</a><p>For the everyday athlete.</p></div>
+    <div class="footer-links"><a href="#/shop">Shop essentials</a><a href="#/membership">Motion Club</a><button type="button" data-action="privacy">Privacy & measurement</button><button type="button" data-action="open-demo">Measurement demo</button></div>
+    <div class="footer-bottom"><span>© 2026 Nano Motion. A fictional brand.</span><span>Sample products and prices. No payments or real registrations.</span></div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <aside id="consent-banner" class="consent-banner" aria-label="Measurement consent" hidden>
+    <div><strong>Your privacy, your choice.</strong><p>Allow OpenAI measurement to record shopping actions for this demo? You can shop without it and change your choice anytime.</p><button type="button" class="text-link" data-action="privacy">What is measured?</button></div>
+    <div class="consent-actions"><button class="button button-dark" type="button" data-action="consent-accept">Allow measurement</button><button class="button button-outline" type="button" data-action="consent-reject">Reject</button></div>
+  </aside>
+  <dialog id="privacy-dialog" class="modal"><div class="modal-head"><h2>Privacy & measurement</h2><button class="icon-button" type="button" data-close="privacy-dialog" aria-label="Close privacy settings">×</button></div>
+    <p>This is a fictional sample storefront. Purchases and waitlist signups are simulated. We collect no payment details and send no membership emails.</p>
+    <p>If you allow measurement, the OpenAI Pixel can record page and product views, basket additions, checkout starts, demo orders and demo waitlist leads. Commerce events include product identifiers, quantity, value and currency. No contact data is manually included in events.</p>
+    <p>The SDK can use first-party identifiers to relate eligible actions to ads. Consent also applies to those measurement cookies. Rejecting or withdrawing consent stops future measurement events. Browser restrictions may still prevent delivery.</p>
+    <p>Your consent choice and demo bag stay in this browser. Demo order state lasts for this tab. The waitlist uses a fixed synthetic email and does not store an email address.</p>
+    <p><a href="https://developers.openai.com/ads/measurement-pixel" target="_blank" rel="noopener noreferrer">Read the OpenAI Pixel documentation</a></p>
+    <p id="privacy-status"></p><div class="modal-actions"><button class="button button-dark" type="button" data-action="consent-accept">Allow measurement</button><button class="button button-outline" type="button" data-action="consent-reject">Reject / withdraw</button></div>
+  </dialog>
+  <dialog id="measurement-dialog" class="measurement-dialog"><div class="modal-head"><div><span class="eyebrow">IMPLEMENTATION VIEW</span><h2>Measurement demo</h2></div><button class="icon-button" type="button" data-close="measurement-dialog" aria-label="Close measurement demo">×</button></div>
+    <p class="measurement-disclaimer">This is a local record of application calls. It does not prove event delivery, platform receipt or ad attribution. Verify requests in browser DevTools.</p>
+    <div class="measurement-status"><div><span>Consent</span><strong id="measurement-consent"></strong></div><div><span>Pixel SDK</span><strong id="measurement-sdk"></strong></div><div><span>Pixel ID</span><code>JVqJHiUMphYM8rZnxaMwYm</code></div></div>
+    <div class="measurement-toolbar"><span id="measurement-count"></span><div><button type="button" class="text-link" data-action="privacy">Consent settings</button><button type="button" class="text-link" data-action="export-log">Export log</button><button type="button" class="text-link" data-action="reset-demo">Reset demo</button></div></div>
+    <div id="event-log" class="event-log"></div>
+    <p class="small muted">Open DevTools → Network and filter for <code>bzr</code>. Event names and payloads follow the <a href="https://developers.openai.com/ads/supported-events" target="_blank" rel="noopener noreferrer">OpenAI event schema</a>. No fabricated ad identifiers or campaign results.</p>
+  </dialog>
+  <button class="demo-launcher" type="button" data-action="open-demo" aria-label="Open measurement demo"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 15V9m7 6V3m7 12v-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Measurement</span><span id="demo-count" class="demo-count">0</span></button>
+  <noscript><p class="noscript">Please enable JavaScript to browse products and try the demo checkout.</p></noscript>
+</body>
+</html>
